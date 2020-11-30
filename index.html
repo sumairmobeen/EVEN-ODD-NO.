@@ -10,48 +10,47 @@
 <body>
    
 
+<form action="#" onsubmit="addRoll()">
+<input type="number" id="num1" placeholder="Enter Roll Number">
+<button>Enter</button>
+</form>
+<p id="result"></p>
 
-    <h2>ROLL NUMBER SEPRATION</h2>
-        <form method="post">
-            Enter Roll Number:  <input type="number" id="num" name="num" min="0" />
-            <input type="button" value="ENTERR" onclick="findOddEven()" name="CHECK" />
-            <div style="margin-top: 10px;" id="result"></div>
-            <div style="margin-top: 10px;" id="result1"></div>
-
-
-            <h2> Even Roll Number</h2>
+<button onclick="gen()">Creat List</button><br>
+<h1>Even no</h1><br>
+<p id="even"></p>
+<h1>Odd Number</h1><br>
+<p id="odd"></p>
+      
             
+  <script>
+      let arr = []
+    let odd = []
+    let even = []
 
-            <h2>Odd Roll Number
-                
-            </h2>
-        </form>
-
-    <script>
-
-        
-    function findOddEven(){
-        //get the input value
-        var num = document.getElementById('num').value;
-
-        //if the remainder value is 0 then it is an even number
-        //we are using % modulus operator to get the remainder value
-        if ( num % 2 == 0) {
-            document.getElementById('result').innerHTML = num + ' is an Even number';
+      function addRoll(){
+          let put = document.getElementById('num1').value;
+          arr.push(put)
+          document.getElementById('result').innerHTML = arr;
+          document.getElementById('num1').value = "";  ////// for empty the field
+      }
+    function gen(){
+        for(i = 0 ; i <= arr.length; i++){
+            if (arr[i] % 2 === 0){
+            even.push(arr[i]);
+            document.getElementById('even').innerHTML = even;
+            
+            }
+            else{
+                odd.push(arr[i]);
+                document.getElementById('odd').innerHTML = odd;
+            }
         }
-        // if ( num % 2 != 0) {
-        //     document.getElementById('result1').innerHTML = num + ' is an Odd number';
-        // }
-        
-       else
-          
-        {
-            document.getElementById('result1').innerHTML = num + ' is an Odd number';
-        }
-
-        
     }
-           
-</script>
+
+
+  </script>     
+
+  
 </body>
 </html>
