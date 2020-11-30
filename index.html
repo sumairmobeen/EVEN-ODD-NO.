@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+   
+
+
+    <h2>ROLL NUMBER SEPRATION</h2>
+        <form method="post">
+            Enter Roll Number:  <input type="number" id="num" name="num" min="0" />
+            <input type="button" value="ENTERR" onclick="findOddEven()" name="CHECK" />
+            <div style="margin-top: 10px;" id="result"></div>
+            <div style="margin-top: 10px;" id="result1"></div>
+
+
+            <h2> Even Roll Number</h2>
+            
+
+            <h2>Odd Roll Number
+                
+            </h2>
+        </form>
+
+    <script>
+
+        
+    function findOddEven(){
+        //get the input value
+        var num = document.getElementById('num').value;
+
+        //if the remainder value is 0 then it is an even number
+        //we are using % modulus operator to get the remainder value
+        if ( num % 2 == 0) {
+            document.getElementById('result').innerHTML = num + ' is an Even number';
+        }
+        // if ( num % 2 != 0) {
+        //     document.getElementById('result1').innerHTML = num + ' is an Odd number';
+        // }
+        
+       else
+          
+        {
+            document.getElementById('result1').innerHTML = num + ' is an Odd number';
+        }
+
+        
+    }
+           
+</script>
+</body>
+</html>
